@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+<!-- saved from url=(0037)http://www.unicode.org/faq/indic.html -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="VI60_defaultClientScript" content="JavaScript">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="keywords" content="Fonts, Keyboards">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>FAQ - Myanmar (Burmese) Scripts and Languages</title>
+<link rel="stylesheet" type="text/css" href="http://www.unicode.org/webscripts/standard_styles.css">
+<link rel="stylesheet" type="text/css" href="faq_styles.css">
+</head>
+
+<body text="#330000">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td colspan="2">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td class="icon" style="width:38px; height:35px"><a href="http://www.unicode.org/"><img border="0"
+src="http://www.unicode.org/webscripts/logo60s2.gif" align="middle"
+alt="[Unicode]" width="34" height="33"></a></td>
+<td class="icon" style="vertical-align:middle;">
+&nbsp;<a class="bar"
+href="http://www.unicode.org/faq/"><font size="3">Frequently Asked
+Questions</font></a></td>
+<td class="bar"><a href="http://www.unicode.org" class="bar">Home</a> |
+<a href="http://www.unicode.org/sitemap/" class="bar">Site Map</a> |
+<a href="http://www.unicode.org/search" class="bar">Search </a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- BEGIN CONTENTS -->
+<table>
+<tr>
+<td class="contents" valign="top">
+<blockquote>
+<h1>FAQ - Myanmar (Burmese) Scripts and Languages</h1>
+<ul class="faq">
+<li><a href="#1">How is the Myanmar language encoded?</a></li>
+<li><a href="#2">What other encodings are commonly used ?</a></li>
+<li><a href="#3">What are the differences between the encodings?</a></li>
+<li><a href="#3.1">What are some advantages of different encodings?</a></li>
+<li><a href="#4">How can I tell what encoding is used for a particular website or piece of text?</a></li>
+<li><a href="#4.1">So isn't Unicode just another font for Myanmar?</a></li>
+
+<li><a href="#5">Are there special Unicode fonts for Myanmar text? Where can I find them?</a></li>
+<li><a href="#6">What languages can be written with Unicode Myanmar characters?</a></li>
+<li><a href="#7">Is it possible to convert to Unicode from other encodings?</a></li>
+<li><a href="#8">Should I support both Unicode and Zawgyi on my site? If so, how do I do that?</a></li>
+<li><a href="#9">My site has content entered by users in both Zawgyi and Unicode text. How can my users read both?</a></li>
+<li><a href="#9.1">How is Myanmar handled on mobile devices?</a></li>
+<li><a href="#10">My friends all use Zawgyi in email and texting, but my device only supports Unicode. How can I communicate with them?</a></li>
+<li><a href="#11">Do I need an IME to properly enter Myanmar text?</a></li>
+<li><a href="#12">Is the keyboard arrangement for Unicode different from other fonts?</a></li>
+<li><a href="#13">Where do I find the Unicode characters for Myanmar script?</a></li>
+<li><a href="#14">I have specific questions about Bengali (Bangla). Where are the answers?</a></li>
+<li><a href="#16">What about collation of Myanmar language data? Is that
+just a binary sort?</a></li>
+<li><a href="#17">I cannot find the code points for the kinzi in Unicode. What do I do?</a></li>
+<li><a href="#21">Unicode doesn't have characters for subscripted vowels. How can I enter them?</a></li>
+<li><a href="#22">I want to know how to put a virama in my text. How is this done?</a></li>
+<li><a href="#23">I want to read content that includes both Unicode and Zawgyi text. Can I do this?></li>
+<li><a href="#23.1">I am using a Unicode-compliant font on Unicode text. However, some characters are rendered incorrectly. What is wrong?></li>
+<li><a href="#23.2">Will everyone eventually convert to Unicode?></li>
+<li><a href="#24">I have specific questions about other languages written with Myanmar script, e.g., Pali, Sanskrit, Shan, Mon, Karen, Kayah, etc. Where can i learn more?></li>
+</ul>
+<p class="q"><a href="1"></a>How is the Myanmar language encoded?</p>
+<p class = "a">A: The Myanmar script has been included in Unicode since Version 4.0 (<strong>VERIFY</strong>) and was significantly enhanced in Version 5.1. Three blocks are defined for characters of this script, including <a href="http://unicode.org/charts/PDF/U1000.pdf">the base characters</a> (Range: 1000-109F), <a href="http://unicode.org/charts/PDF/UAA60.pdf">Myanmar Extended-A</a> (Range: AA60–AA7F), and <a href="http://unicode.org/charts/PDF/UA9E0.pdf">Myanmar Extended-B</a> (Range: A9E0–A9FF). These support several languages including Myanmar (Burmese),  Pali, Sanskrit, Shan, Mon, Karen, Kayah, and others.
+</p>
+
+<p class="q"><a href="2"></a>What other encodings are commonly used ?
+</p>
+<p class="a">
+Several other encodings are in common use, all based on different font mappings. These include ZawgyiOne, Zawgyi 2000, Myazedi, and others. 
+</p>
+
+<p class="q"><a href="3"></a>What are the differences between the encodings?
+</p>
+<p class="a">
+Most encodingsare not compatible with Unicode, although many use the same code point range as the base Unicode block (U_1000 - U+109F). Some characters are common in these fonts, especially the base consonants, but other characters and combining marks differ widely. This has several implications:
+<ul>
+<li>UTF-8 can be used to represent the characters of any of these fonts, including Unicode and Zawgyi, which is the the most common non-Unicode scheme.
+</li>
+<li>The characters displayed depend on the font that is used.</li>
+<li>Displaying Characters with a different font than the encoding will appear to be corrupted, typically showing "dotted" characters disconnected from base consonants, and also and incorrect characters. For example, this shows Unicode text rendered with ZawgyiOne font <strong>INSERT PICTURE HERE of ZAWGYI text in Unicode font</strong>
+<br />and this is Zawgyi encoded text displayed with a Unicode font (NotoSans Myanmar) <strong>INSERT PICTURE HERE</strong> .</li>
+<li>Since the code points overlap among these encodings, it is impossible to create a "universal font" that will display different encodings at the same time.</li>
+<li>
+It is important to detect the encoding used in Burmese text in order to to apply the appropriate font.
+</li>
+<li>Machines of the same type or with the same operating system may have different Myanmar fonts and keyboards installed.</li>
+<li>Text is not automatically converted by most systems. To be understood, text must be shown in the same font as sent, or the text must be converted to the reader's font.</li>
+<li>
+To display text consistently, characters should be converted to a single encoding such as Unicode, then use a Unicode-compliant font.
+</li>
+</ul>
+</p>
+
+<p class="q"><a href="3.1"></a>What are some advantages of different encodings?
+</p>
+<p class="a">
+Unicode:
+<ul>
+<li>advantages</li>
+<li>disadvantages</li>
+</ul>
+
+Zawgyi:
+<ul>
+<li>advantages</li>
+<li>disadvantages</li>
+</ul>
+Others: less commonly used. Similar to Zawgyi.
+</p>
+
+
+<p class="q"><a href="4"></a>How can I tell what encoding is used for a particular website or piece of text?
+</p>
+<p class="a">
+Almost all text in a given encoding will render correctly, i.e., without corrupted rendering, only when displayed with a compatible font. For example, Zawgyi text will appear incorrect with a Unicode font, and text encoding as Unicode will look wrong with ZawgyiOne font.
+</p>
+<p class="a">Some online tools are available that will help determine the encoding of text.
+<ul>
+<li><a href="http://zawgyi-unicode-test.appspot.com/">zawgyi-unicode-test.appspot.com</a> takes text and displays it using several common fonts, including two diiferet Unicode fonts.
+</li>
+<li>Several web sites offer detectors that use Javascript to look for non-Unicode patterns. <strong>Give some examples and links.
+</strong>
+</ul>
+</p>
+
+<p class="q"><a href="4.1"></a>So isn't Unicode just another font for Myanmar?
+</p>
+<p class="a">
+No. Unicode defines character code points and ordering Any Unicode-compliant font
+</p>
+
+<p class="q"><a href="5"></a>Are there special Unicode fonts for Myanmar text? Where can I find them?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="6"></a>What languages can be written with Unicode Myanmar characters?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="7"></a>Is it possible to convert to Unicode from other encodings?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="8"></a>Should I support both Unicode and Zawgyi on my site? If so, how do I do that?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="9"></a>My site has content entered by users in both Zawgyi and Unicode text. How can my users read both?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="9.1"></a>How is Myanmar handled on mobile devices?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="10"></a>My friends all use Zawgyi in email and texting, but my device only supports Unicode. How can I communicate with them?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="11"></a>Do I need an IME to properly enter Myanmar text?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="12"></a>Is the keyboard arrangement for Unicode different from other fonts?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="13"></a>Where do I find the Unicode characters for Myanmar script?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="14"></a>I have specific questions about Bengali (Bangla). Where are the answers?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="16"></a>What about collation of Myanmar language data? Is that
+just a binary sort?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="17"></a>I cannot find the code points for the kinzi in Unicode. What do I do?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="21"></a>Unicode doesn't have characters for subscripted vowels. How can I enter them?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="22"></a>I want to know how to put a virama in my text. How is this done?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="23"></a>I want to read content that includes both Unicode and Zawgyi text. Can I do this?>
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="23.1"></a>I am using a Unicode-compliant font on Unicode text. However, some characters are rendered incorrectly. What is wrong?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="23.2"></a>Will everyone eventually convert to Unicode?
+</p>
+<p class="a">
+</p>
+
+<p class="q"><a href="24"></a>I have specific questions about other languages written with Myanmar script, e.g., Pali, Sanskrit, Shan, Mon, Karen, Kayah, etc. Where can i learn more?
+</p>
+<p class="a">
+</p>
+
+<hr width="50%">
+<div align="center">
+<center>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td><a href="http://www.unicode.org/copyright.html">
+<img src="http://www.unicode.org/img/hb_notice.gif" border="0"
+alt="Access to Copyright and terms of use" width="216" height="50">
+</p>
+<p class="a">
+
+</p>
+
+</tr>
+</table>
+<script language="Javascript" type="text/javascript"
+src="http://www.unicode.org/webscripts/lastModified.js"></script></center>
+</div>
+</blockquote>
+</td>
+</tr>
+</table>
+</html>

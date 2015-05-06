@@ -63,7 +63,6 @@ Questions</font></a></td>
 <li><a href="#11">Do I need an IME to properly enter Myanmar text?</a></li>
 <li><a href="#12">Is the keyboard arrangement for Unicode different from other fonts?</a></li>
 <li><a href="#13">Where do I find the Unicode characters for Myanmar script?</a></li>
-<li><a href="#14">I have specific questions about Bengali (Bangla). Where are the answers?</a></li>
 <li><a href="#16">What about collation of Myanmar language data? Is that
 just a binary sort?</a></li>
 <li><a href="#17">I cannot find the code points for the kinzi in Unicode. What do I do?</a></li>
@@ -87,13 +86,24 @@ Several other encodings are in common use, all based on different font mappings.
 <p class="q"><a href="3"></a>What are the differences between the encodings?
 </p>
 <p class="a">
-Most encodingsare not compatible with Unicode, although many use the same code point range as the base Unicode block (U_1000 - U+109F). Some characters are common in these fonts, especially the base consonants, but other characters and combining marks differ widely. This has several implications:
+Most encodings are not compatible with Unicode, although many use the same code point range as the base Unicode block (U_1000 - U+109F). Some characters are common in these fonts, especially the base consonants, but other characters and combining marks differ widely.
+<a href="http://my.wikipedia.org/wiki/Wikipedia:Font">Wikipedia:Font</a> shows the code points for both Unicode and Zawgyi, which is the most commonly used non-Unicode scheme.
+<p>
+This has several important implications:
 <ul>
-<li>UTF-8 can be used to represent the characters of any of these fonts, including Unicode and Zawgyi, which is the the most common non-Unicode scheme.
+<li>The characters shown for given code points depend on the specific font that is used.</li>
+<li>UTF-8 can refer to any of these encodings, including Unicode and Zawgyi, which is the the most common non-Unicode scheme.
 </li>
-<li>The characters displayed depend on the font that is used.</li>
-<li>Displaying Characters with a different font than the encoding will appear to be corrupted, typically showing "dotted" characters disconnected from base consonants, and also and incorrect characters. For example, this shows Unicode text rendered with ZawgyiOne font <strong>INSERT PICTURE HERE of ZAWGYI text in Unicode font</strong>
-<br />and this is Zawgyi encoded text displayed with a Unicode font (NotoSans Myanmar) <strong>INSERT PICTURE HERE</strong> .</li>
+<li>Characters shown with the wrong font will appear to be corrupted, typically showing "dotted" characters disconnected from base consonants, and also and incorrect characters.
+For example, this shows Unicode text rendered with a Unicode font:
+<p> <img src="myanmar-images/unicode_text_in_unicode.png">
+<p>and with the ZawgyiOne font:
+<p><img src="myanmar-images/unicode_text_in_zawgyi.png">.
+<p>Here is Zawgyi encoded text (code points: 0x1018 0x101a 0x1039) displayed with a Unicode font (Padauk):
+<p><img src="myanmar-images/zawgyi_text_in_padauk.png">
+<p>and with ZawgyiOne
+<p><img src="myanmar-images/zawgyi_text_in_zawgyi.png">
+</li>
 <li>Since the code points overlap among these encodings, it is impossible to create a "universal font" that will display different encodings at the same time.</li>
 <li>
 It is important to detect the encoding used in Burmese text in order to to apply the appropriate font.
@@ -190,11 +200,6 @@ No. Unicode defines character code points and ordering Any Unicode-compliant fon
 </p>
 
 <p class="q"><a href="13"></a>Where do I find the Unicode characters for Myanmar script?
-</p>
-<p class="a">
-</p>
-
-<p class="q"><a href="14"></a>I have specific questions about Bengali (Bangla). Where are the answers?
 </p>
 <p class="a">
 </p>

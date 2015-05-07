@@ -15,6 +15,17 @@
 <title>FAQ - Myanmar (Burmese) Scripts and Languages</title>
 <link rel="stylesheet" type="text/css" href="http://www.unicode.org/webscripts/standard_styles.css">
 <link rel="stylesheet" type="text/css" href="http://www.unicode.org/faq/faq_styles.css">
+
+<style>
+table.bordered {
+    border-collapse: collapse;
+}
+
+table.bordered, td.bordered, th.bordered {
+    border: 1px solid black;
+}
+</style>
+
 </head>
 
 <body text="#330000">
@@ -49,10 +60,11 @@ Questions</font></a></td>
 <li><a href="#1">How is the Myanmar language encoded?</a></li>
 <li><a href="#2">What other encodings are commonly used ?</a></li>
 <li><a href="#3">What are the differences between the encodings?</a></li>
-<li><a href="#3.1">What are some advantages of different encodings?</a></li>
+<li><a href="#3.01">Can we use a <em>universal font</em> that will display Unicode and Zawgyi text together?</a></li>
+<li><a href="3.02">Doesn't "UTF-8" indicate Unicode?</a></li>
+<li><a href="#3.1">What are some advantages and disadvantages of different encodings?</a></li>
 <li><a href="#4">How can I tell what encoding is used for a particular website or piece of text?</a></li>
 <li><a href="#4.1">So isn't Unicode just another font for Myanmar?</a></li>
-
 <li><a href="#5">Are there special Unicode fonts for Myanmar text? Where can I find them?</a></li>
 <li><a href="#6">What languages can be written with Unicode Myanmar characters?</a></li>
 <li><a href="#7">Is it possible to convert to Unicode from other encodings?</a></li>
@@ -74,63 +86,113 @@ just a binary sort?</a></li>
 <li><a href="#24">I have specific questions about other languages written with Myanmar script, e.g., Pali, Sanskrit, Shan, Mon, Karen, Kayah, etc. Where can i learn more?></li>
 </ul>
 <p class="q"><a href="1"></a>How is the Myanmar language encoded?</p>
-<p class = "a">A: The Myanmar script has been included in Unicode since Version 4.0 (<strong>VERIFY</strong>) and was significantly enhanced in Version 5.1. Three blocks are defined for characters of this script, including <a href="http://unicode.org/charts/PDF/U1000.pdf">the base characters</a> (Range: 1000-109F), <a href="http://unicode.org/charts/PDF/UAA60.pdf">Myanmar Extended-A</a> (Range: AA60–AA7F), and <a href="http://unicode.org/charts/PDF/UA9E0.pdf">Myanmar Extended-B</a> (Range: A9E0–A9FF). These support several languages including Myanmar (Burmese),  Pali, Sanskrit, Shan, Mon, Karen, Kayah, and others.
+<p class="a">A: The Myanmar script has been included in Unicode since Version 4.0 (<strong>VERIFY</strong>) and was significantly enhanced in Version 5.1. Unicode has three blocks for characters of this script:
+<ul>
+<li><a href="http://unicode.org/charts/PDF/U1000.pdf">The base Myanmar characters</a> (Range: 1000-109F),</li>
+<li><a href="http://unicode.org/charts/PDF/UAA60.pdf">Myanmar Extended-A</a> (Range: AA60–AA7F),</li>
+<li><a href="http://unicode.org/charts/PDF/UA9E0.pdf">Myanmar Extended-B</a> (Range: A9E0–A9FF).</li>
+</ul>
+<p class="a">
+These support several languages including Myanmar (Burmese),  Pali, Sanskrit, Shan, Mon, Karen, Kayah, and others.
 </p>
 
 <p class="q"><a href="2"></a>What other encodings are commonly used ?
 </p>
 <p class="a">
-Several other encodings are in common use, all based on different font mappings. These include ZawgyiOne, Zawgyi 2000, Myazedi, and others. 
+A: Several other encodings are in common use, all based on different arrangements of characters and combining marks. These include ZawgyiOne, Zawgyi 2000, Myazedi, and others.
 </p>
 
-<p class="q"><a href="3"></a>What are the differences between the encodings?
+<p class="q"><a href="3"></a>What are the differences between these encodings?
 </p>
 <p class="a">
-Most encodings are not compatible with Unicode, although many use the same code point range as the base Unicode block (U_1000 - U+109F). Some characters are common in these fonts, especially the base consonants, but other characters and combining marks differ widely.
-<a href="http://my.wikipedia.org/wiki/Wikipedia:Font">Wikipedia:Font</a> shows the code points for both Unicode and Zawgyi, which is the most commonly used non-Unicode scheme.
-<p>
-This has several important implications:
-<ul>
-<li>The characters shown for given code points depend on the specific font that is used.</li>
-<li>UTF-8 can refer to any of these encodings, including Unicode and Zawgyi, which is the the most common non-Unicode scheme.
-</li>
-<li>Characters shown with the wrong font will appear to be corrupted, typically showing "dotted" characters disconnected from base consonants, and also and incorrect characters.
-For example, this shows Unicode text rendered with a Unicode font:
-<p> <img src="myanmar-images/unicode_text_in_unicode.png">
-<p>and with the ZawgyiOne font:
-<p><img src="myanmar-images/unicode_text_in_zawgyi.png">.
-<p>Here is Zawgyi encoded text (code points: 0x1018 0x101a 0x1039) displayed with a Unicode font (Padauk):
-<p><img src="myanmar-images/zawgyi_text_in_padauk.png">
-<p>and with ZawgyiOne
-<p><img src="myanmar-images/zawgyi_text_in_zawgyi.png">
-</li>
-<li>Since the code points overlap among these encodings, it is impossible to create a "universal font" that will display different encodings at the same time.</li>
-<li>
-It is important to detect the encoding used in Burmese text in order to to apply the appropriate font.
-</li>
-<li>Machines of the same type or with the same operating system may have different Myanmar fonts and keyboards installed.</li>
-<li>Text is not automatically converted by most systems. To be understood, text must be shown in the same font as sent, or the text must be converted to the reader's font.</li>
-<li>
-To display text consistently, characters should be converted to a single encoding such as Unicode, then use a Unicode-compliant font.
-</li>
-</ul>
+A: Although other encodings may use the same code point range as the base Unicode block (U_1000 - U+109F), they are not compatible with Unicode. Some characters are common in these fonts, especially the base consonants, but other characters and combining marks differ widely.
+Of course, the shapes shown for given code points depend on the specific font that is used.
+</p>
+<p class="a">
+<a href="http://my.wikipedia.org/wiki/Wikipedia:Font">Wikipedia:Font</a> shows the code point differences for both Unicode and Zawgyi, which is the most commonly used non-Unicode scheme.
+</p>
+<p class="a">
+For each combining character, Unicode defines a single code point such
+as U+103c, which is the <em>ra medial</em> that surrounds a consonant with a line. A Unicode font combines this with other code points to create the right shape.
+<p class="a">
+Non-unicode fonts use as many as 8 code points for different parts of the <em>ra</em> glyph for narrow and wide consonants and other conditions. The user needs to type the right one for each context. This also means that many additional code points are defined than in the Unicode blocks.
+<p class="a">
+An incorrect match between font and text shows "dotted" characters or overlapping lines, and also and incorrect characters.
+<p class="a">
+<table class="subtle">
+<tr>
+<th >Encoding</th>
+<th>With ZawgyiOne font</th>
+<th>With Unicode (Padauk) font</th>
+<th>Code points</th>
+</tr>
+<tr>
+<td>Unicode text</td>
+<td>
+  <img src="myanmar-images/unicode_text_in_zawgyi.png">.
+</td>
+<td>
+  <img src="myanmar-images/unicode_text_in_unicode.png">
+</td>
+<td>
+U+1015 U+103C U+102F U+101C U+102F U+1015 U+103A U+1019 U+103E U+102C</td>
+</tr>
+<td>Zawgyi-encoded text</td>
+<td><img src="myanmar-images/zawgyi_text_in_zawgyi.png"></td>
+<td><img src="myanmar-images/zawgyi_text_in_padauk.png"></td>
+<td> 0x1018 0x101a 0x1039</td>
+</tr>
+</table>
+</p>
+<p class="a">
+To be understood correctly, text must be shown in the same font as written, or the text must be converted to the font used for display.
 </p>
 
-<p class="q"><a href="3.1"></a>What are some advantages of different encodings?
+<p class="q"><a href="3.01"></a>Can we use a <em>universal font</em> that will display Unicode and Zawgyi text together?
+</p>
+<p class="a">
+A: No. Since the code points of different characters are in the same
+range (0x1000-0x109f), no font can automatically apply the right character shapes. No <em>universal font</em> is possible.</li>
+</p>
+<p class="a">
+However, HTML may use different fonts explicitly in tagged regions if the encoding of the text inside has been detected.
+</p>
+
+<p class="q"><a href="3.02"></a>Doesn't "UTF-8" indicate Unicode?
+</p>
+<p class="a">
+A: No. UTF-8 is a scheme for representing a code point in 1, 2, 3, or 4 bytes. Since the code points use the same range, UTF-8 can refer to any of these encodings.
+</>
+
+<p class="q"><a href="3.1"></a>What are some advantages and disadvantages of different encodings?
 </p>
 <p class="a">
 Unicode:
 <ul>
-<li>advantages</li>
-<li>disadvantages</li>
+<li>+ It is the standard accepted by the World Wide Web Consortium, and works on almost every device and operating now available.</li>
+<li>+ Search is seamless with Unicode, since there is only one way to define a character.</li>
+<li>+ Unicode fonts support 11 languages that use the Myanmar script, not on Burmese.
+<li>+ Each combining mark is a single character, making input easier.
+<li>+ Multiple Unicode-compatible fonts are available, allowing users to choose different "look and feel", similar to other scripts such as Latin.
+<li>- The font rendering is more complex, requiring a system to support a modern rendering engine.</li>
+<li>- Code points must be in a defined order for combining marks to be shown.</li>
+<li>- Many websites, documents, and systems have been implemented with
+other encoding schemes.</li>
 </ul>
 
-Zawgyi:
+ZawgyiOne, Zawgwyi 2008, Myazedi and others:
 <ul>
-<li>advantages</li>
-<li>disadvantages</li>
+<li>+ Widely used for existing web sites, documents, and user communictions.</li>
+<li>+ A simpler rendering engine can implement the graphical output.</li>
+<li>- Many more code points are used, so only Burmese language can be
+written. Characters of other language using this script cannot be
+used.</li>
+<li>- In most cases, only a single font has been defined for each encoding, limiting styles of text that can be displayed.</li>
+<li>- The order of code points is flexible, making searching and
+matching text difficult. For example, search engines results are
+highly dependent the specific order in which text has been typed.
+</li>
 </ul>
-Others: less commonly used. Similar to Zawgyi.
 </p>
 
 
@@ -143,7 +205,7 @@ Almost all text in a given encoding will render correctly, i.e., without corrupt
 <ul>
 <li><a href="http://zawgyi-unicode-test.appspot.com/">zawgyi-unicode-test.appspot.com</a> takes text and displays it using several common fonts, including two diiferet Unicode fonts.
 </li>
-<li>Several web sites offer detectors that use Javascript to look for non-Unicode patterns. <strong>Give some examples and links.
+<li>Several web sites offer detectors that use Javascript to look for non-Unicode patterns. <strong>TODO: Give some examples and links.
 </strong>
 </ul>
 </p>
@@ -151,7 +213,7 @@ Almost all text in a given encoding will render correctly, i.e., without corrupt
 <p class="q"><a href="4.1"></a>So isn't Unicode just another font for Myanmar?
 </p>
 <p class="a">
-No. Unicode defines character code points and ordering Any Unicode-compliant font
+Yes and no. Unicode for Myanmar is more than a font, since it defines character code points but also defines an ordering of code points for consistent representation of text. Many Unicode-compliant fonts already implement the rendering for such text.
 </p>
 
 <p class="q"><a href="5"></a>Are there special Unicode fonts for Myanmar text? Where can I find them?
@@ -182,12 +244,25 @@ No. Unicode defines character code points and ordering Any Unicode-compliant fon
 <p class="q"><a href="9.1"></a>How is Myanmar handled on mobile devices?
 </p>
 <p class="a">
+Most mobile devices do not allow the user to change or replace the installed fonts. An application may "bundle" a font, but that will only be used within the application, not for other tools or apps.
+</p>
+<p class="a">
+Many devices already include a Unicode compliant font that is used by default for any Myanmar text. Any Unicode text will be appear correctly in the system-installed applications.
+Zawgyi text will be shown incorrectly unless the particular application has included the Zawgyi font within the application.
+</p>
+<p class="a">
+Some phone vendors have installed ZawgyiOne in place of a Unicode font. In this case, Zawgyi will look right, but Unicode text in messages and web sites will look wrong.
+</p>
+<p class="a">
+It is possible for an application to detect and convert text between encodings to match the installed fonts. However, this is not common.
 </p>
 
 <p class="q"><a href="10"></a>My friends all use Zawgyi in email and texting, but my device only supports Unicode. How can I communicate with them?
 </p>
 <p class="a">
 </p>
+
+<!-- Craig to stop here -->
 
 <p class="q"><a href="11"></a>Do I need an IME to properly enter Myanmar text?
 </p>

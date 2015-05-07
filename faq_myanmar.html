@@ -172,7 +172,7 @@ A: No. UTF-8 is a scheme for representing a code point in 1, 2, 3, or 4 bytes. S
 <p class="q"><a href="3.1"></a>What are some advantages and disadvantages of different encodings?
 </p>
 <p class="a">
-Unicode:
+A: Here are the main Unicode points:
 <ul>
 <li>+ It is the standard accepted by the World Wide Web Consortium, and works on almost every device and operating now available.</li>
 <li>+ Search is seamless with Unicode, since there is only one way to define a character.</li>
@@ -185,8 +185,9 @@ Myanmar script, not only Burmese.
 <li>- Many websites, documents, and systems have been implemented with
 other encoding schemes.</li>
 </ul>
-
-ZawgyiOne, Zawgwyi 2008, Myazedi and others:
+</p>
+<p class="a">
+The following notes apply to ZawgyiOne, Zawgwyi 2008, Myazedi and others:
 <ul>
 <li>+ Widely used for existing web sites, documents, and user communictions.</li>
 <li>+ A simpler rendering engine can implement the graphical output.</li>
@@ -204,7 +205,7 @@ highly dependent the specific order in which text has been typed.
 <p class="q"><a href="4"></a>How can I tell what encoding is used for a particular website or piece of text?
 </p>
 <p class="a">
-Almost all text in a given encoding will render correctly only when displayed with a compatible font. For example, Zawgyi text will appear incorrect with a Unicode font, and text encoding as Unicode will look wrong with ZawgyiOne font. However, since a subset of characters is common to all these fonts, some strings will be identical in all encodings.
+A: Almost all text in a given encoding will render correctly only when displayed with a compatible font. For example, Zawgyi text will appear incorrect with a Unicode font, and text encoding as Unicode will look wrong with ZawgyiOne font. However, since a subset of characters is common to all these fonts, some strings will be identical in all encodings.
 </p>
 <p class="a">Some online tools are available that will help determine the encoding of text.
 <ul>
@@ -285,7 +286,7 @@ TBD: start this list.
 <p class="q"><a href="8"></a>Should I support both Unicode and Zawgyi on my site? If so, how do I do that?
 </p>
 <p class="a">
-Since may platforms do not yet have Unicode fonts, it is very helpful to provide a way for any user to view content. Several techniques are described here:
+A: Since may platforms do not yet have Unicode fonts, it is very helpful to provide a way for any user to view content. Several techniques are described here:
 <ul>
 <li><strong>Use a webfont</strong> on your site and apply it with CSS
 in any HTML block that displays text, e.g., a <em>&lt;div
@@ -318,12 +319,22 @@ encodings. Unicode text on your site can be consistently interpreted.
 <p class="q"><a href="9"></a>My site has content entered by users in both Zawgyi and Unicode text. How can my users read both?
 </p>
 <p class="a">
+A: Good for you to care that your users can read all messages! There are at least two ways to handle this, similar to the methods described for web sites. Each requires detecting the encoding of each message posted.
+<ul>
+  <li>
+    Use webfonts for the site. Make sure each  posting is in its own tagged block such as <em>div</em>. Set the CSS for each posting to a font based on the encoding.
+  </li>
+  <li>
+    Convert all postings to Unicode form. Set CSS to use Unicode-compatible fonts.
+  </li>
+</ul>
+You may consider educating your users on using Unicode fonts.
 </p>
 
 <p class="q"><a href="9.1"></a>How is Myanmar handled on mobile devices?
 </p>
 <p class="a">
-Most mobile devices do not allow the user to change or replace the installed fonts. An application may "bundle" a font, but that will only be used within the application, not for other tools or apps.
+A: Most mobile devices do not allow the user to change or replace the installed fonts. An application may "bundle" a font, but that will only be used within the application, not for other tools or apps.
 </p>
 <p class="a">
 Many devices already include a Unicode compliant font that is used by default for any Myanmar text. Any Unicode text will be appear correctly in the system-installed applications.
@@ -339,6 +350,13 @@ It is possible for an application to detect and convert text between encodings t
 <p class="q"><a href="10"></a>My friends all use Zawgyi in email and texting, but my device only supports Unicode. How can I communicate with them?
 </p>
 <p class="a">
+A: This is more complicated because fonts cannot be added or changed on
+most mobile devices. Free Myanmar Unicode keyboards are available for
+most mobile devices from online sources, so work with your friends to
+agree on a common way to communicate.
+</p>
+<p class="a">
+Apps that convert between Zawgyi and Unicode are also available. Copying and pasting text messages into such an interactive converter will let you read any message.
 </p>
 
 <!-- Craig to stop here -->
@@ -394,7 +412,7 @@ just a binary sort?
 <p class="a">
 </p>
 
-<p class="q"><a href="24"></a>I have specific questions about other languages written with Myanmar script, e.g., Pali, Sanskrit, Shan, Mon, Karen, Kayah, etc. Where can i learn more?
+<p class="q"><a href="24"></a>I have specific questions about other languages written with Myanmar script, e.g., Pali, Sanskrit, Shan, Mon, Karen, Kayah, etc. Where can I learn more?
 </p>
 <p class="a">
 </p>

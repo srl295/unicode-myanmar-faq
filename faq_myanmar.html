@@ -95,10 +95,16 @@ just a binary sort?</a></li>
 </ul>
 </p>
 <p class="a">
-Code points incle letters (consonants and independent vowels), vowel signs, medial signs, digits, various signs, and punctuation. Medial and vowel signs, anusvara, visarga, virama, asat and others combine with letters. Unicode defines the order of combining characters for correct display.
+Code points include letters (consonants and independent vowels), vowel
+signs, medial signs, digits, various signs, and punctuation. Medial
+and vowel signs, anusvara, visarga, virama, asat and others combine
+with letters. Unicode defines the order of combining characters for
+correct display.
 </p>
 <p class="a">
-These support several languages including Myanmar (Burmese),  Pali, Sanskrit, Shan, Mon, Karen, Kayah, and others.
+These code points support several languages written in the script,
+including Myanmar (Burmese), Pali, Sanskrit, Shan, Mon, Karen, Kayah,
+and others.
 </p>
 
 <p class="q"><a href="2"></a>What other encodings are commonly used ?
@@ -407,8 +413,15 @@ just a binary sort?
 <p class="q"><a href="17"></a>I cannot find the code points for the kinzi in Unicode. What do I do?
 </p>
 <p class="a">
+A <em>kinzi</em> is where the first consonant in a cluster is a non-word-final letter NGA. In this case, NGA rises over the following letter, <a href="http://rishida.net/scripts/myanmar/">as described here.</a> This combination appears as a small character similar to a Greek epsilon over the following letter.
+<p class="a">
+ZawgyiOne represents <em>kinzi</em> with a single code point 0x1064 for this combination <em>kinzi</em></p>.
+<p class="a">
+In Unicode, NGA + ASAT is entered, followed by a VIRAMA to position
+the character over the next letter.  This allows searching for the NGA
+letter as a character. The <em>kinzi</em> sequence is code points
+U+1004 U+103A U+1039, followed by the next letter.
 </p>
-
 <p class="q"><a href="21"></a>Unicode doesn't have characters for subscripted vowels. How can I enter them?
 </p>
 <p class="a">

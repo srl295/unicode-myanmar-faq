@@ -61,7 +61,7 @@ Questions</font></a></td>
 <li><a href="#2">What other encodings are commonly used ?</a></li>
 <li><a href="#3">What are the differences between the encodings?</a></li>
 <li><a href="#3.01">Can we use a <em>universal font</em> that will display Unicode and Zawgyi text together?</a></li>
-<li><a href="3.02">Doesn't "UTF-8" indicate Unicode?</a></li>
+<li><a href="#3.02">Doesn't "UTF-8" indicate Unicode?</a></li>
 <li><a href="#3.1">What are some advantages and disadvantages of different encodings?</a></li>
 <li><a href="#4">How can I tell what encoding is used for a particular website or piece of text?</a></li>
 <li><a href="#4.1">So isn't Unicode just another font for Myanmar?</a></li>
@@ -71,6 +71,7 @@ Questions</font></a></td>
 <li><a href="#8">Should I support both Unicode and Zawgyi on my site? If so, how do I do that?</a></li>
 <li><a href="#9">My site has content entered by users in both Zawgyi and Unicode text. How can my users read both?</a></li>
 <li><a href="#9.1">How is Myanmar handled on mobile devices?</a></li>
+<li><a href="#9.2">How can I tell if my system is using a Unicode font or Zawgyi by default?</a>
 <li><a href="#10">My friends all use Zawgyi in email and texting, but my device only supports Unicode. How can I communicate with them?</a></li>
 <li><a href="#11">Do I need an IME to properly enter Myanmar text?</a></li>
 <li><a href="#12">Is the keyboard arrangement for Unicode different from other fonts?</a></li>
@@ -92,6 +93,10 @@ just a binary sort?</a></li>
 <li><a href="http://unicode.org/charts/PDF/UAA60.pdf">Myanmar Extended-A</a> (Range: AA60–AA7F),</li>
 <li><a href="http://unicode.org/charts/PDF/UA9E0.pdf">Myanmar Extended-B</a> (Range: A9E0–A9FF).</li>
 </ul>
+</p>
+<p class="a">
+Code points incle letters (consonants and independent vowels), vowel signs, medial signs, digits, various signs, and punctuation. Medial and vowel signs, anusvara, visarga, virama, asat and others combine with letters. Unicode defines the order of combining characters for correct display.
+</p>
 <p class="a">
 These support several languages including Myanmar (Burmese),  Pali, Sanskrit, Shan, Mon, Karen, Kayah, and others.
 </p>
@@ -134,7 +139,7 @@ An incorrect match between font and text shows "dotted" characters or overlappin
 <tr>
 <td>Unicode text</td>
 <td>
-  <img src="myanmar-images/unicode_text_in_zawgyi.png">.
+  <img src="myanmar-images/unicode_text_in_zawgyi.png">
 </td>
 <td>
   <img src="myanmar-images/unicode_text_in_unicode.png">
@@ -347,6 +352,23 @@ Some phone vendors have installed ZawgyiOne in place of a Unicode font. In this 
 It is possible for an application to detect and convert text between encodings to match the installed fonts. However, this is not common.
 </p>
 
+<p class="q"><a href="9.2"></a>How can I tell if my system is using a Unicode font or Zawgyi by default?
+<p class="a">
+  Just examine the appearance of the Myanmar character code point (U+104e):
+  <font size="18"> ၎
+  </font>
+
+<table>
+  <tr>
+    <td>If the character looks like this, it is using a Unicode font:</td>
+    <td><img src="myanmar-images/U104eUnicodeFont.png"></td>
+    <td>If it looks like this, your browser is using Zawgyi or Myazedi:</td>
+    <td><img src="myanmar-images/U104eZawgyiFont.png"></td>
+  </tr>
+<table>
+</p>
+
+</p>
 <p class="q"><a href="10"></a>My friends all use Zawgyi in email and texting, but my device only supports Unicode. How can I communicate with them?
 </p>
 <p class="a">
@@ -397,7 +419,7 @@ just a binary sort?
 <p class="a">
 </p>
 
-<p class="q"><a href="23"></a>I want to read content that includes both Unicode and Zawgyi text. Can I do this?>
+<p class="q"><a href="23"></a>I want to read content that includes both Unicode and Zawgyi text. Can I do this?
 </p>
 <p class="a">
 </p>

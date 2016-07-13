@@ -506,7 +506,7 @@ just a binary sort?
 A <em>kinzi</em> is where the first consonant in a cluster is a non-word-final letter NGA. In this case, NGA rises over the following letter, <a href="http://rishida.net/scripts/myanmar/">as described here.</a> This combination appears as a small character similar to a Greek epsilon over the following letter.
 <p class="a">
 ZawgyiOne represents <em>kinzi</em> with a single code point 0x1064
-for this combination <em>kinzi</em>.</p>
+for this.</p>
 <p class="a">
 In Unicode, NGA + ASAT is entered, followed by a VIRAMA to position
 the character over the next letter.  This allows searching for the NGA
@@ -518,20 +518,23 @@ sequence is U+1004 U+103A U+1039, followed by the next letter.
   kinzi. In this case, the output is the series of code points defined
   above.
 </p>
-<p class="q"><a href="21"></a>Unicode doesn't have characters for subscripted characters. How can I enter them?
+<p class="q"><a href="21"></a>Unicode doesn't have characters for
+subscripted characters. How can I enter them?
 </p>
 <p class="a">
-  The Unicode character U+1039 MYANMAR SIGN VIRAMA is used after a
-  consonant to put the next character below the consonant.
+Unicode uses the character U+1039 MYANMAR SIGN VIRAMA to position the next character. This removes the need for individual subscripted code points.
 </p>
 
-<p class="q"><a href="22"></a>I want to know how to put a virama in my text. How is this done?
+<p class="q"><a href="22"></a>I want to know how to put a virama in my
+text. How is this done?
 </p>
 <p class="a">
-A keyboard should provide a key that will enter the virama, allowing the subscripting.
+A Unicode keyboard will provide a key to enter the virama, allowing
+the subscripting. Some keyboards show this as a dotted circle on the key.
 </p>
 
-<p class="q"><a href="23"></a>I want to read content that includes both Unicode and Zawgyi text. Can I do this?
+<p class="q"><a href="23"></a>I want to read content that includes
+both Unicode and Zawgyi text. Can I do this?
 </p>
 <p class="a">
 This is not possible unless each block of characters is rendered with
@@ -539,24 +542,34 @@ an appropriate font. For example, this is in HTML done by defining a
 font for each tagged region.
 </p>
 
-<p class="q"><a href="23.1"></a>I am using a Unicode-compliant font on Unicode text. However, some characters are rendered incorrectly. What is wrong?
+<p class="q"><a href="23.1"></a>I am using a Unicode-compliant font on
+Unicode text. However, some characters are rendered incorrectly. What
+is wrong?
 </p>
 <p class="a">
-  <!-- srl--> The <a href="http://www.unicode.org/help/display_problems.html">Display Problems</a> page has some general help with
-    display problems that may be useful.
+  <!-- srl-->
+    The <a href="http://www.unicode.org/help/display_problems.html">Display
+    Problems</a> page has some general help with display problems that
+    may be useful. Some rendering problems are the result of a
+    mismatch between the font and the rendering engine in the device.
 </p>
 
-<p class="q"><a href="23.2"></a>Will everyone eventually convert to Unicode?
+<p class="q"><a href="23.2"></a>Will everyone eventually convert to
+Unicode?
 </p>
 <p class="a">
-  <!-- srl -->Unicode was designed to provide consistent and efficient interchange of all textual information.
-  At the time of this writing non-Unicode text is more prevalent in the Myanmar script. However, it is expected
-  that the benefits to the Myanmar language itself, as well as the enabling of non-Myanmar languages, will
-  eventually bring Unicode as the prevailing encoding for the Myanmar script, which is the trend for all other
-  scripts served by Unicode.
+  <!-- srl -->Unicode was designed to provide consistent and efficient
+  interchange of all textual information.  At the time of this writing
+  non-Unicode text is more prevalent in the Myanmar script. However,
+  it is expected that the benefits to the Myanmar language itself, as
+  well as the enabling of non-Myanmar languages, will eventually bring
+  Unicode as the prevailing encoding for the Myanmar script, which is
+  the trend for all other scripts served by Unicode.
 </p>
 
-<p class="q"><a href="24"></a>I have specific questions about other languages written with Myanmar script, e.g., Pali, Sanskrit, Shan, Mon, Karen, Kayah, etc. Where can I learn more?
+<p class="q"><a href="24"></a>I have specific questions about other
+languages written with Myanmar script, e.g., Pali, Sanskrit, Shan,
+Mon, Karen, Kayah, etc. Where can I learn more?
 </p>
 <p class="a">
   <!-- srl--> TBD - forums??

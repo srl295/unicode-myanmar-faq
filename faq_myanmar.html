@@ -76,9 +76,9 @@ Questions</font></a></td>
 <h1>FAQ - Myanmar (Burmese) Scripts and Languages</h1>
 <ul class="faq">
 <li><a href="#1">How is the Myanmar language encoded?</a></li>
-<li><a href="#2">What other encodings are commonly used ?</a></li>
+<li><a href="#2">What other encodings are commonly used?</a></li>
 <li><a href="#3">What are the differences between the encodings?</a></li>
-<li><a href="#3.01">Can we use a <em>universal font</em> that will display Unicode and Zawgyi text together?</a></li>
+<li><a href="#3.01">Isn't there a <em>universal font</em> that will display Unicode and Zawgyi text together?</a></li>
 <li><a href="#3.02">Doesn't "UTF-8" indicate Unicode?</a></li>
 <li><a href="#3.1">What are some advantages and disadvantages of different encodings?</a></li>
 <li><a href="#4">How can I tell what encoding is used for a particular website or piece of text?</a></li>
@@ -99,13 +99,17 @@ just a binary sort?</a></li>
 <li><a href="#17">I cannot find the code points for the kinzi in Unicode. What do I do?</a></li>
 <li><a href="#21">Unicode doesn't have characters for subscripted vowels. How can I enter them?</a></li>
 <li><a href="#22">I want to know how to put a virama in my text. How is this done?</a></li>
-<li><a href="#23">I want to read content that includes both Unicode and Zawgyi text. Can I do this?></li>
+<li><a href="#23">I want to read content that includes both Unicode and Zawgyi text. Can I do this?</li>
 <li><a href="#23.1">I am using a Unicode-compliant font on Unicode text. However, some characters are rendered incorrectly. What is wrong?></li>
 <li><a href="#23.2">Will everyone eventually convert to Unicode?></li>
 <li><a href="#24">I have specific questions about other languages written with Myanmar script, e.g., Pali, Sanskrit, Shan, Mon, Karen, Kayah, etc. Where can i learn more?></li>
 </ul>
-<p class="q"><a href="1"></a>How is the Myanmar language encoded?</p>
-<p class="a">A: The Myanmar script was <a href="http://en.wikipedia.org/wiki/Burmese_alphabet#Unicode">added to the Unicode Standard in Version 3.0</a> (September, 199) and was significantly extended in Version 5.2 (2009). Unicode now has three blocks for characters of this script:
+<p class="q"><a href="1"></a>How is the Myanmar script encoded?</p>
+<p class="a">A: The Myanmar script
+was <a href="http://en.wikipedia.org/wiki/Burmese_alphabet#Unicode">added
+to the Unicode Standard in Version 3.0</a> (September, 1999.) Support
+was significantly extended in Version 5.2 (2009). Unicode now has
+three blocks for characters of this script:
 <ul>
 <li><a href="http://unicode.org/charts/PDF/U1000.pdf">The base Myanmar characters</a> (Range: 1000-109F),</li>
 <li><a href="http://unicode.org/charts/PDF/UAA60.pdf">Myanmar Extended-A</a> (Range: AA60–AA7F),</li>
@@ -113,43 +117,67 @@ just a binary sort?</a></li>
 </ul>
 </p>
 <p class="a">
-Code points include letters (consonants and independent vowels), vowel
-signs, medial signs, digits, various signs, and punctuation. Medial
-and vowel signs, anusvara, visarga, virama, asat and others combine
-with letters. Unicode defines the order of combining characters for
-correct display.
-</p>
-<p class="a">
 These code points support several languages written in the script,
 including Myanmar (Burmese), Pali, Sanskrit, Shan, Mon, Karen, Kayah,
 and others.
+</p>
+<p class="a">
+Code points include letters (consonants and independent vowels), vowel
+signs, medial signs, digits, various signs, and punctuation. Medial
+and vowel signs, anusvara, visarga, virama, asat and others combine
+with letters.
+</p>
+<p class="a">
+Unicode defines the order of combining characters for
+correct display in the Burmese language.
 </p>
 
 <p class="q"><a href="2"></a>What other encodings are commonly used ?
 </p>
 <p class="a">
-A: Several other encodings are in common use, all based on different arrangements of characters and combining marks. These include ZawgyiOne, Zawgyi 2000, Myazedi, and others.
+A: Several other non-standard fonts are commonly used to represent
+text in Burmese and other languages. Each uses a font-dependent
+arrangement of characters and combining marks for mapping code points
+to glyphs in the font. Examples include ZawgyiOne, Zawgyi 2000,
+Myazedi, several Mon and Shan encodings, and others.
+</p>
+<p class="a"><strong>Very important:</strong> These are not standardized
+or registered encodings. Instead, they simply define characters for their
+range of coverage. These <em>font encodings</em> do not specific any
+properties for any of the code points.
 </p>
 
-<p class="q"><a href="3"></a>What are the differences between these encodings?
+<p class="q"><a href="3"></a>What are the differences between these
+encodings?
 </p>
 <p class="a">
-A: Although other encodings may use the same code point range as the base Unicode block (U_1000 - U+109F), they are not compatible with Unicode. Some characters are common in these fonts, especially the base consonants, but other characters and combining marks differ widely.
-Of course, the shapes shown for given code points depend on the specific font that is used.
+A: Although some fonts use the same code point range as the base
+Unicode block (U+1000 - U+109F), they are not compatible with
+Unicode. Some of the code points are the same as in Unicode,
+especially the base consonants, but other characters and combining
+marks differ widely from font to font. Of course, the shapes shown
+for given code points depend on the specific font that is used.
 </p>
 <p class="a">
-<a href="http://my.wikipedia.org/wiki/Wikipedia:Font">Wikipedia:Font</a> shows the code point differences for both Unicode and Zawgyi, which is the most commonly used non-Unicode scheme.
+<a href="http://my.wikipedia.org/wiki/Wikipedia:Font">Wikipedia:Font</a> shows the code point differences for both Unicode and ZawgyiOne, the most commonly used non-Unicode scheme.
 </p>
 <p class="a">
-For each combining character, Unicode defines a single code point such
-as U+103c, which is the <em>ra medial</em> that surrounds a consonant
-with a line. A Unicode font combines this with other code points to
-create the right shape.
+For each combining character, Unicode defines a single code point that
+is rendered appropriately for the base character. For example U+103c,
+the <em>ra medial</em> surrounds an associated consonant with a
+line. A Unicode font generates the right shape at display time.
 </p>
 <p class="a">
-Unicode also defines a unique order of code points for base letters adn combining characters.
+In contrast, non-unicode fonts use as many as 8 code points for
+different parts of the <em>ra</em> glyph for narrow and wide
+consonants and other conditions. The user must type the exact version
+for each context. This also means that many extra code points are needed
+for the Burmese language compared to Unicode.
+</p>
 <p class="a">
-Non-unicode fonts use as many as 8 code points for different parts of the <em>ra</em> glyph for narrow and wide consonants and other conditions. The user needs to type the right one for each context. This also means more code points are needed for the Burmese language than in the Unicode. These fonts also allow multiple orderings of combining marks and base letters, without a unique representation of each combination.
+Most of these font encodings also allow multiple orderings of
+combining marks and base letters, without a unique representation of
+each combination.
 <p class="a">
 An incorrect match between font and text shows "dotted" characters or overlapping lines, and also and incorrect characters, as shown in the following table.
 <p class="a">
@@ -179,17 +207,26 @@ U+1015 U+103C U+102F U+101C U+102F U+1015 U+103A U+1019 U+103E U+102C</td>
 </table>
 </p>
 <p class="a">
-To be understood correctly, text must be shown in the same font as written, or the text must be converted to the font used for display.
+To be understood correctly, text must be shown in the same font as
+written, or the text must be converted somehow to the font used for
+display.
 </p>
 
-<p class="q"><a href="3.01"></a>Can we use a <em>universal font</em> that will display Unicode and Zawgyi text together?
+<p class="a">
+Unicode also defines a unique order of code points for base letters
+and combining characters.
+
+<p class="q"><a href="3.01"></a>Isn't there a <em>universal font</em>
+that will display Unicode and Zawgyi text together?
 </p>
 <p class="a">
 A: No. Since the code points of different characters are in the same
-range (0x1000-0x109f), no font can automatically apply the right character shapes. No <em>universal font</em> is possible.</li>
+range (0x1000-0x109f), no font can automatically apply the right
+character shapes. No <em>universal font</em> is possible.</li>
 </p>
 <p class="a">
-However, HTML may use different fonts explicitly in tagged regions if the encoding of the text inside has been detected.
+However, HTML may apply the appropriate font explicitly in tagged
+regions if the encoding of the text inside has been detected.
 </p>
 
 <p class="q"><a href="3.02"></a>Doesn't "UTF-8" indicate Unicode?
@@ -210,7 +247,9 @@ Myanmar script, not only Burmese.
 <li>+ Each combining mark is a single character, making input easier.
 <li>+ Multiple Unicode-compatible fonts are available, allowing users to choose different "look and feel", similar to other scripts such as Latin.
 <li>- The font rendering is more complex, requiring a modern rendering engine.</li>
-<li>- Code points must be in a defined order for combining marks to be shown.</li>
+<li>- Code points must be in a defined order for combining marks to be
+properly rendered. Keyboard input methods may reorder characters for
+the user.</li>
 <li>- Many websites, documents, and systems have been implemented with
 other encoding schemes.</li>
 </ul>
@@ -220,12 +259,16 @@ The following notes apply to ZawgyiOne, Zawgwyi 2008, Myazedi and others:
 <ul>
 <li>+ Widely used for existing web sites, documents, and user communictions.</li>
 <li>+ A simpler rendering engine can implement the graphical output.</li>
+<li>+ Zawgyi keyboards reflect the visual order of characters, and can
+be easier to use than those that require the user to enter characters
+in a precise order.</li>
 <li>- Many more code points are used, so only the Burmese language can
 be written with these fonts. Characters for other languages using this script are missing.</li>
-<li>- In most cases, only a single font has been defined for each encoding, limiting styles of text that can be displayed.</li>
+<li>- In some cases, only a single font has been defined for each
+encoding, limiting styles of text that can be displayed.</li>
 <li>- The order of code points is flexible, making searching and
-matching text difficult. For example, search engines results are
-highly dependent the specific order in which text has been typed.
+matching text difficult. For example, search engine results are highly
+dependent on the specific order in which codepoints havebeen entered.
 </li>
 </ul>
 </p>
@@ -234,7 +277,7 @@ highly dependent the specific order in which text has been typed.
 <p class="q"><a href="4"></a>How can I tell what encoding is used for a particular website or piece of text?
 </p>
 <p class="a">
-A: Almost all text in a given encoding will render correctly only when displayed with a compatible font. For example, Zawgyi text will appear incorrect with a Unicode font, and text encoding as Unicode will look wrong with ZawgyiOne font. However, since a subset of characters is common to all these fonts, some strings will be identical in all encodings.
+A: Almost all text in a given encoding will render correctly only when displayed with a compatible font. For example, Zawgyi text will appear incorrect with a Unicode font, and text encoding as Unicode will look wrong with ZawgyiOne font. However, since a subset of characters is common to all these fonts, some strings look identical in both encodings.
 </p>
 <p class="a">Some online tools are available that will help determine the encoding of text.
 <ul>
@@ -245,40 +288,36 @@ A: Almost all text in a given encoding will render correctly only when displayed
 </ul>
 </p>
 
-<p class="q"><a href="4.1"></a>So isn't Unicode just another font for Myanmar?
+<p class="q"><a href="4.1"></a>Isn't Unicode just another font for Myanmar?
 </p>
 <p class="a">
-A: Yes and no. Unicode for Myanmar is more than a font. It defines
-character code points and also requires a specific ordering of code
-points for consistent text rendering. Unicode-compliant fonts
-already expect this ordering to display characters correctly.
-</p>
-<p class="a">
-As a published standard, Unicode provides a public description of each
-code point, plus characterstics that can be used for other text
-processing functions such as its collation, combining status, and
-combining order. These are available via
+A: No. Unicode is a a published standard that provides a public
+description of each code point in the script. Each character has
+defined attributes such as its collation, combining status, and
+combining order. These can be used for text processing functions such
+as sorting and searching. The attributes are used in
 the <a href="http://site.icu-project.org/">ICU C++ and Java
 libraries</a>.
 </p>
 
-
 <p class="q"><a href="5"></a>Are there special Unicode fonts for Myanmar text? Where can I find them?
 </p>
 <p class="a">
-A: Many Unicode-compatible fonts have appear for displaying Mynamar text. These include:
+A: Many modern Unicode-compatible fonts are available for displaying Mynamar text. These include:
 <ul>
-<li>
-TBD:
-</li>
+<li>Microsoft MMR,</li>
+<li>Tharlon,</li>
+<li>Padauk,</li>
+<li>Noto Sans Myanmar,</li>
+<li>and many others.</li>
 </ul>
-Important: proper display of characters depends both on the font and on the rendering software (<em>engine</em>) used.
+Important: proper display of characters depends both on the font and on the rendering software (<em>engine</em>) used. Even a Unicode font may render a few combining characters incorrectly on some devices or operating systems.
 </p>
 
 <p class="q"><a href="6"></a>What languages can be written with Unicode Myanmar characters?
 </p>
 <p class="a">
-A: Characters for these languages are supported in the 3 Unicode
+A: Characters for these languages are supported in the three Unicode
 Myanmar blocks noted above:
 <ul>
 <li>Myanmar (Burmese)</li>
@@ -303,7 +342,7 @@ Myanmar blocks noted above:
 <p class="q"><a href="7"></a>Is it possible to convert text in other encodings to Unicode?
 </p>
 <p class="a">
-A: Yes. Several converters are publicly available in programming languages including JavaScript, Java, and C++.
+A: Yes. Several converters are publicly available in programming languages including JavaScript, Java, Python, and C++.
 <ul>
 <li>
 TBD: start this list.
@@ -325,12 +364,11 @@ font. This works well in most cases for either Zawgyi or Unicode
 text. However, transmitting the font increases load time for such
 content.
 <li>
-<li>
 <strong>Let users switch</strong> via a prominent control on the page
 to select either Unicode or other encoding. Then use this setting to
-load load the correct pages. An automatic converter may be used to
-prepare text as needed. This has the advantage of no font download,
-but adds complexity on both the client and server.
+load pages in the selected encoding. An automatic converter may be used to
+prepare text as needed. This has the advantage of avoid font download,
+but adds complexity to both the client and server.
 </li>
 <li>
 <strong>Detect the encoding of user-entered text</strong>. Use this to provide text in the detected encoding.
@@ -351,13 +389,16 @@ encodings. Unicode text on your site can be consistently interpreted.
 A: Good for you to care that your users can read all messages! There are at least two ways to handle this, similar to the methods described for web sites. Each requires detecting the encoding of each message posted.
 <ul>
   <li>
-    Use webfonts for the site. Make sure each  posting is in its own tagged block such as <em>div</em>. Set the CSS for each posting to a font based on the encoding.
+    Use webfonts for the site. Make sure each posting is in its own
+    tagged block such as <em>div</em>. Set the CSS for each posting to
+    a font based on the encoding.
   </li>
   <li>
-    Convert all postings to Unicode form. Set CSS to use Unicode-compatible fonts.
+    Convert all postings to Unicode form on the server. Set CSS to apply a
+    Unicode-compatible fonts.
   </li>
 </ul>
-You may consider educating your users on using Unicode fonts.
+You may also consider educating your users on using Unicode fonts.
 </p>
 
 <p class="q"><a href="9.1"></a>How is Myanmar handled on mobile devices?
@@ -366,28 +407,41 @@ You may consider educating your users on using Unicode fonts.
 A: Most mobile devices do not allow the user to change or replace the installed fonts. An application may "bundle" a font, but that will only be used within the application, not for other tools or apps.
 </p>
 <p class="a">
-Many devices already include a Unicode compliant font that is used by default for any Myanmar text. Any Unicode text will be appear correctly in the system-installed applications.
-Zawgyi text will be shown incorrectly unless the particular application has included the Zawgyi font within the application.
+Many devices already include a Unicode compliant font that is used by
+default for any Myanmar text. Any Unicode text will be appear
+correctly in the system-installed applications.  Zawgyi text will look
+wrong unless the particular application has included the Zawgyi font
+within the application.
 </p>
 <p class="a">
-Some phone vendors have installed ZawgyiOne in place of a Unicode font. In this case, Zawgyi will look right, but Unicode text in messages and web sites will look wrong.
+Some device vendors have installed ZawgyiOne in place of a Unicode
+font. In this case, Zawgyi will look right, but Unicode text in
+messages and web sites will look wrong.
 </p>
 <p class="a">
-It is possible for an application to detect and convert text between encodings to match the installed fonts. However, this is not common.
+It is also possible for an application or device to detect and convert
+text to match the installed fonts.
 </p>
 
-<p class="q"><a href="9.2"></a>How can I tell if my system is using a Unicode font or Zawgyi by default?
+<p class="q"><a href="9.2"></a>How can I tell if my system is using a
+Unicode font or Zawgyi by default?
 <p class="a">
-  Just examine the appearance of the Myanmar character code point (U+104e):
+  Just examine the appearance of the Myanmar character code point (U+104e) here:
   <font size="18"> ၎
   </font>
 
 <table>
   <tr>
-    <td>If the character looks like this, it is using a Unicode font:</td>
+    <td>If the above is looks like this character, you have a Unicode font:</td>
     <td><img src="myanmar-images/U104eUnicodeFont.png"></td>
+  </tr>
+  <tr>
     <td>If it looks like this, your browser is using Zawgyi or Myazedi:</td>
     <td><img src="myanmar-images/U104eZawgyiFont.png"></td>
+  </tr>
+  <tr>
+    <td>If the above is blank or a box, no Myanmar font was found.</td>
+    <td></td>
   </tr>
 <table>
 </p>
@@ -396,10 +450,10 @@ It is possible for an application to detect and convert text between encodings t
 <p class="q"><a href="10"></a>My friends all use Zawgyi in email and texting, but my device only supports Unicode. How can I communicate with them?
 </p>
 <p class="a">
-A: This is more complicated because fonts cannot be added or changed on
-most mobile devices. Free Myanmar Unicode keyboards are available for
-most mobile devices from online sources, so work with your friends to
-agree on a common way to communicate.
+A: This is complicated, primarily because fonts cannot be added or
+changed on most mobile devices. Free Myanmar Unicode keyboards are
+available for most mobile devices from online sources, so work with
+your friends to agree on a common way to communicate.
 </p>
 <p class="a">
 Apps that convert between Zawgyi and Unicode are also available. Copying and pasting text messages into such an interactive converter will let you read any message.
@@ -407,34 +461,43 @@ Apps that convert between Zawgyi and Unicode are also available. Copying and pas
 
 <!-- Craig to stop here -->
 
-<p class="q"><a href="11"></a>Do I need an IME to properly enter Myanmar text?
+<p class="q"><a href="11"></a>Do I need an input method editor (IME) to properly enter Myanmar text in Unicode?
 </p>
 <p class="a">
+  Keyboards for Myanmar text are available in many forms. Most Unicode input methods reorder entered code points for correct rendering.
 </p>
 
 <p class="q"><a href="12"></a>Is the keyboard arrangement for Unicode different from other fonts?
 </p>
 <p class="a">
-  <!-- srl --> Unicode does not specify a keyboard arrangement, but leaves the keyboard or IME provider free to arrange the keyboard
-  in the most natural way for the users. 
+  <!-- srl --> Unicode does not specify a keyboard arrangement, but
+  leaves the keyboard or IME provider free to arrange the keyboard in
+  the most natural way for the users. However, a Unicode font only
+  requires many fewer keys, since only one code point is needed for
+  each diacritic.
 </p>
 
-<p class="q"><a href="13"></a>Where do I find the Unicode characters for Myanmar script?
+<p class="q"><a href="13"></a>Where do I find the Unicode characters
+for Myanmar script?
 </p>
 <p class="a">
-  <!-- srl --> 
+  <!-- srl -->
   The Myanmar script is documented in <a href="http://www.unicode.org/versions/Unicode7.0.0/ch16.pdf">Chapter 16</a> of
-    The Unicode Standard version 7.0.  
-  <a href='http://unicode.org/cldr/utility/list-unicodeset.jsp?a=[%3AMymr%3A]&g='>This link</a> will show all Myanmar script characters.
-    
+    The Unicode Standard, Version 7.0.
+  <a href='http://unicode.org/cldr/utility/list-unicodeset.jsp?a=[%3AMymr%3A]&g='>
+  This link</a> presents all Myanmar script characters defined in the
+  Unicode blocks. The detailed character properties for each code
+  point are available too.
 </p>
 
 <p class="q"><a href="16"></a>What about collation of Myanmar language data? Is that
 just a binary sort?
 </p>
 <p class="a">
-<!-- srl -->  Generally, a binary sort is not recommended, instead use <a href="http://www.unicode.org/collation/">Unicode Collation</a>. 
-  The collation chart for Myanmar is <a href="http://unicode.org/charts/collation/chart_Myanmar.html">here</a>.
+<!-- srl --> Generally, a binary sort is not recommended. Instead,
+  use <a href="http://www.unicode.org/collation/">Unicode
+  Collation</a>.  The collation chart for Myanmar
+  is <a href="http://unicode.org/charts/collation/chart_Myanmar.html">here</a>.
 </p>
 
 <p class="q"><a href="17"></a>I cannot find the code points for the kinzi in Unicode. What do I do?
@@ -442,26 +505,38 @@ just a binary sort?
 <p class="a">
 A <em>kinzi</em> is where the first consonant in a cluster is a non-word-final letter NGA. In this case, NGA rises over the following letter, <a href="http://rishida.net/scripts/myanmar/">as described here.</a> This combination appears as a small character similar to a Greek epsilon over the following letter.
 <p class="a">
-ZawgyiOne represents <em>kinzi</em> with a single code point 0x1064 for this combination <em>kinzi</em></p>.
+ZawgyiOne represents <em>kinzi</em> with a single code point 0x1064
+for this combination <em>kinzi</em>.</p>
 <p class="a">
 In Unicode, NGA + ASAT is entered, followed by a VIRAMA to position
 the character over the next letter.  This allows searching for the NGA
-letter as a character. The <em>kinzi</em> sequence is code points
-U+1004 U+103A U+1039, followed by the next letter.
-</p>
-<p class="q"><a href="21"></a>Unicode doesn't have characters for subscripted vowels. How can I enter them?
+letter as a character. The Unicode sequence for <em>kinzi</em>
+sequence is U+1004 U+103A U+1039, followed by the next letter.
 </p>
 <p class="a">
+  Note that some Unicode keyboards may provide an input key for the
+  kinzi. In this case, the output is the series of code points defined
+  above.
+</p>
+<p class="q"><a href="21"></a>Unicode doesn't have characters for subscripted characters. How can I enter them?
+</p>
+<p class="a">
+  The Unicode character U+1039 MYANMAR SIGN VIRAMA is used after a
+  consonant to put the next character below the consonant.
 </p>
 
 <p class="q"><a href="22"></a>I want to know how to put a virama in my text. How is this done?
 </p>
 <p class="a">
+A keyboard should provide a key that will enter the virama, allowing the subscripting.
 </p>
 
 <p class="q"><a href="23"></a>I want to read content that includes both Unicode and Zawgyi text. Can I do this?
 </p>
 <p class="a">
+This is not possible unless each block of characters is rendered with
+an appropriate font. For example, this is in HTML done by defining a
+font for each tagged region.
 </p>
 
 <p class="q"><a href="23.1"></a>I am using a Unicode-compliant font on Unicode text. However, some characters are rendered incorrectly. What is wrong?

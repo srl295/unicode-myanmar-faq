@@ -3,7 +3,7 @@ Myanmar FAQ
 
 This is a project to work on a new/updated FAQ on Myanmar for Unicode.
 
-See [myanmar-faq.html](myanmar-faq.html) for the content.
+See [faq_myanmar.html](faq_myanmar.html) for the content.
 
 CONTACT
 ---

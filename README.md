@@ -6,7 +6,7 @@ This is a project to work on a new/updated FAQ on Myanmar for Unicode.
 Actual content is at
 
 * [faq_myanmar.html](faq_myanmar.html) (local)
-* https://rawgit.com/srl295/unicode-myanmar-faq/master/faq_myanmar.html (latest)
+* http://rawgit.com/srl295/unicode-myanmar-faq/master/faq_myanmar.html (latest)
 
 CONTACT
 ---
